@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For My Darling 💗</title>
+
+  <!-- Pretty Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      height: 100vh;
+      background: linear-gradient(135deg, #ffb3c6, #ffe5ec);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Quicksand', sans-serif;
+      overflow: hidden;
+    }
+
+    /* -------- ENVELOPE SCREEN -------- */
+    .envelope-screen {
+      text-align: center;
+    }
+
+    .envelope {
+      width: 220px;
+      height: 150px;
+      background: #fff;
+      position: relative;
+      border-radius: 10px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+      cursor: pointer;
+      transition: transform 0.4s;
+    }
+
+    .envelope:hover {
+      transform: scale(1.05);
+    }
+
+    .envelope::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 0;
+      border-left: 110px solid transparent;
+      border-right: 110px solid transparent;
+      border-top: 75px solid #ff4d6d;
+      border-radius: 10px;
+    }
+
+    .open-text {
+      margin-top: 20px;
+      font-size: 22px;
+      font-weight: 600;
+      color: #fff;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    }
+
+    /* -------- LETTER SCREEN -------- */
+    .letter-screen {
+      display: none;
+      background: #fff;
+      width: 90%;
+      max-width: 500px;
+      padding: 25px;
+      border-radius: 16px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+      animation: fadeIn 1s ease;
+      text-align: center;
+    }
+
+    .letter-screen h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 28px;
+      color: #ff4d6d;
+      margin-bottom: 20px;
+    }
+
+    .letter-screen p {
+      font-size: 18px;
+      color: #444;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    /* -------- MOBILE OPTIMIZATION -------- */
+    @media (max-width: 480px) {
+      .letter-screen h1 {
+        font-size: 24px;
+      }
+
+      .letter-screen p {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ENVELOPE -->
+  <div class="envelope-screen" id="envelopeScreen">
+    <div class="envelope" onclick="openLetter()"></div>
+    <div class="open-text">Open my darling 💗</div>
+  </div>
+
+  <!-- LETTER -->
+  <div class="letter-screen" id="letterScreen">
+    <h1>I love you more my baby 🐥</h1>
+
+    <p>
+      sorry if I ever hurt you!
+    </p>
+
+    <p>
+      I'm sorry if I ever hurt you 😭 I love you so so so much 😭...
+      I never want chocolate I want my kittu-cat 😼..
+      Happy chocolate day 😁 have a good day babyyyy 😁❤️
+    </p>
+  </div>
+
+  <script>
+    function openLetter() {
+      document.getElementById("envelopeScreen").style.display = "none";
+      document.getElementById("letterScreen").style.display = "block";
+    }
+  </script>
+
+</body>
+  </html>
