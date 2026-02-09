@@ -3,29 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>For My Darling 💗</title>
-
-  <!-- Pretty Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <title>My Love 💗</title>
 
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
     body {
-      height: 100vh;
-      background: linear-gradient(135deg, #ffb3c6, #ffe5ec);
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #ffccd5, #fff0f3);
       display: flex;
       justify-content: center;
       align-items: center;
-      font-family: 'Quicksand', sans-serif;
-      overflow: hidden;
+      min-height: 100vh;
     }
 
-    /* -------- ENVELOPE SCREEN -------- */
+    /* ENVELOPE */
     .envelope-screen {
       text-align: center;
     }
@@ -33,16 +24,11 @@
     .envelope {
       width: 220px;
       height: 150px;
-      background: #fff;
+      background: white;
+      border-radius: 12px;
       position: relative;
-      border-radius: 10px;
-      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
       cursor: pointer;
-      transition: transform 0.4s;
-    }
-
-    .envelope:hover {
-      transform: scale(1.05);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
     }
 
     .envelope::before {
@@ -50,101 +36,97 @@
       position: absolute;
       top: 0;
       left: 0;
-      width: 0;
-      height: 0;
       border-left: 110px solid transparent;
       border-right: 110px solid transparent;
       border-top: 75px solid #ff4d6d;
-      border-radius: 10px;
     }
 
     .open-text {
       margin-top: 20px;
       font-size: 22px;
-      font-weight: 600;
-      color: #fff;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+      color: #ff4d6d;
+      font-weight: bold;
     }
 
-    /* -------- LETTER SCREEN -------- */
-    .letter-screen {
+    /* MEMORY SCREEN */
+    .memory-screen {
       display: none;
-      background: #fff;
-      width: 90%;
-      max-width: 500px;
-      padding: 25px;
-      border-radius: 16px;
+      width: 95%;
+      max-width: 700px;
+      background: white;
+      border-radius: 18px;
+      padding: 20px;
       box-shadow: 0 20px 40px rgba(0,0,0,0.25);
       animation: fadeIn 1s ease;
+    }
+
+    h1 {
       text-align: center;
-    }
-
-    .letter-screen h1 {
-      font-family: 'Pacifico', cursive;
-      font-size: 28px;
       color: #ff4d6d;
-      margin-bottom: 20px;
-    }
-
-    .letter-screen p {
-      font-size: 18px;
-      color: #444;
-      line-height: 1.6;
       margin-bottom: 15px;
     }
 
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: scale(0.9);
-      }
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 10px;
     }
 
-    /* -------- MOBILE OPTIMIZATION -------- */
-    @media (max-width: 480px) {
-      .letter-screen h1 {
-        font-size: 24px;
-      }
+    .gallery img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 12px;
+    }
 
-      .letter-screen p {
-        font-size: 16px;
-      }
+    .message {
+      margin-top: 15px;
+      font-size: 17px;
+      text-align: center;
+      color: #444;
+      line-height: 1.5;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
     }
   </style>
 </head>
 <body>
 
-  <!-- ENVELOPE -->
-  <div class="envelope-screen" id="envelopeScreen">
-    <div class="envelope" onclick="openLetter()"></div>
-    <div class="open-text">Open my darling 💗</div>
+<!-- ENVELOPE -->
+<div class="envelope-screen" id="envelopeScreen">
+  <div class="envelope" onclick="openMemories()"></div>
+  <div class="open-text">Open my darling 💗</div>
+</div>
+
+<!-- MEMORY PAGE -->
+<div class="memory-screen" id="memoryScreen">
+  <h1>Our Memories 💕</h1>
+
+  <!-- 📸 PHOTOS -->
+  <div class="gallery">
+    <img src="https://drive.google.com/file/d/1C_-WtDL9NdfvRPMvkUjthpz0aBiZTskF/view?usp=drivesdk" alt="">
+    <img src="https://drive.google.com/file/d/1gm_WQi4Nn5mVgDdTYqGblauov54OryGf/view?usp=drivesdk" alt="">
+    <img src="https://drive.google.com/file/d/1kBBQIcvOqcju66_A31XiFyMPd2F5vnax/view?usp=drivesdk" alt="">
+    <img src="https://drive.google.com/file/d/1MEf9H6F6acnVqTCrwr9CSb5j_FvzD3EA/view?usp=drivesdk" alt="">
   </div>
 
-  <!-- LETTER -->
-  <div class="letter-screen" id="letterScreen">
-    <h1>I love you more my baby 🐥</h1>
-
-    <p>
-      sorry if I ever hurt you!
-    </p>
-
-    <p>
-      I'm sorry if I ever hurt you 😭 I love you so so so much 😭...
-      I never want chocolate I want my kittu-cat 😼..
-      Happy chocolate day 😁 have a good day babyyyy 😁❤️
-    </p>
+  <!-- 💖 MESSAGE -->
+  <div class="message">
+    I love every moment with you 😭❤️<br>
+    Every picture here holds a memory I never want to forget.<br>
+    You are my favourite place, always 💗
   </div>
+</div>
 
-  <script>
-    function openLetter() {
-      document.getElementById("envelopeScreen").style.display = "none";
-      document.getElementById("letterScreen").style.display = "block";
-    }
-  </script>
+<script>
+  function openMemories() {
+    document.getElementById("envelopeScreen").style.display = "none";
+    document.getElementById("memoryScreen").style.display = "block";
+  }
+</script>
 
 </body>
-  </html>
+</html>
